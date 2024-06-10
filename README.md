@@ -7,7 +7,6 @@ def game():
     if choice == "rock" or choice == "paper" or choice == "scissors":
         option = ["rock", "paper", "scissors"]
         import random
-        # random.randint(name)
 
         computer_chooice = random.choice(option)
         print(f"Computer is selecting...", end="\n" "{computer_choice}")
