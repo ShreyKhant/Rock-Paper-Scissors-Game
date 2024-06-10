@@ -10,7 +10,7 @@ def game():
         # random.randint(name)
 
         computer_chooice = random.choice(option)
-        print(f"Computer selected {computer_chooice}.")
+        print(f"Computer is selecting...", end="\n" "{computer_choice}")
 
         if choice == computer_chooice:
             print("It's a tie!")
