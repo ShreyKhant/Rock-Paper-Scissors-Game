@@ -8,15 +8,15 @@ def game():
         option = ["rock", "paper", "scissors"]
         import random
 
-        computer_chooice = random.choice(option)
+        computer_choice = random.choice(option)
         print(f"Computer is selecting...", end="\n" "{computer_choice}")
 
         if choice == computer_chooice:
             print("It's a tie!")
             
-        elif(choice == "rock" and computer_chooice == "scissors") or \
-            (choice == "paper" and computer_chooice == "rock") or \
-            (choice == "scissors" and computer_chooice == "paper"):
+        elif(choice == "rock" and computer_choice == "scissors") or \
+            (choice == "paper" and computer_choice == "rock") or \
+            (choice == "scissors" and computer_choice == "paper"):
             print("You WIN!!!!")
             
         else:
