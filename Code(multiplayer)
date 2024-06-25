@@ -1,0 +1,46 @@
+import os
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+def determine_winner(player1_choice, player2_choice):
+    if player1_choice == player2_choice:
+        return "It's a tie!"
+    elif (player1_choice == "rock" and player2_choice == "scissors") or \
+         (player1_choice == "scissors" and player2_choice == "paper") or \
+         (player1_choice == "paper" and player2_choice == "rock"):
+        return "Player 1 wins!"
+    else:
+        return "Player 2 wins!"
+
+def game():
+    choices = ["rock", "paper", "scissors"]
+    
+    while True:
+        # Collect choices from two players
+        player1_choice = input("Player 1, choose from Rock, Paper, Scissors: ").lower()
+        clear_screen()
+        player2_choice = input("Player 2, choose from Rock, Paper, Scissors: ").lower()
+        clear_screen()
+        
+        # Check if choices are valid
+        if player1_choice not in choices or player2_choice not in choices:
+            print("Invalid choice. Please choose either rock, paper, or scissors.")
+            continue
+        
+        # Determine the winner
+        result = determine_winner(player1_choice, player2_choice)
+        print(f"Player 1 chose {player1_choice}.")
+        print(f"Player 2 chose {player2_choice}.")
+        print(result)
+        
+        # Ask if players want to play again
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            print("Credits: Made by Shrey")
+            break
+        
+if __name__ == "__main__":
+    clear_screen()
+    print("Welcome to Rock, Paper, Scissors Game! You will be playing against another player.\n")
+    game()
